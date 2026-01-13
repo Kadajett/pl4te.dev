@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+
+# Lockfiles (each app manages its own)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Build outputs
+.output
+.nitro
+dist
+build
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Cache
+.cache
+.tanstack
+.turbo
+
+# Claude/AI
+.claude
