@@ -251,6 +251,10 @@ function CreateProductForm() {
 
 Server functions run on the server but can be called from client code.
 
+> **⚠️ API Change:** The method `.validator()` was renamed to `.inputValidator()` in recent versions.
+> If you see errors about `.validator()` not existing, change it to `.inputValidator()`.
+> Also note: server functions with input validation should use `method: 'POST'` (not `'GET'`).
+
 ### Basic Server Function
 
 ```tsx
