@@ -11,6 +11,7 @@ A comprehensive project scaffolding system that helps you create new application
 
 | Stack | Description | Use Case |
 |-------|-------------|----------|
+| **TanStack Start + shadcn** | Full-stack React with SSR | Production web apps with React Query, shadcn/ui, Tailwind |
 | **Rust** | Systems programming with Cargo | CLI tools, libraries, high-performance applications |
 | **Tauri** | Rust + Web frontend desktop apps | Cross-platform desktop applications |
 | **TanStack Router** | Type-safe React routing | Modern React SPAs with file-based routing |
@@ -30,6 +31,8 @@ When asked to bootstrap a project, I will:
 ## Quick Commands
 
 To bootstrap a project, ask me to:
+- "Create a full-stack React app with TanStack Start"
+- "Set up a new project with shadcn/ui and Tailwind"
 - "Create a new Rust CLI project"
 - "Set up a Tauri desktop app with React"
 - "Bootstrap a TanStack Router project"

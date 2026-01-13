@@ -9,6 +9,7 @@ Quick reference for all available project templates across supported tech stacks
 | CLI tool | Rust | `cargo new --bin` |
 | High-performance library | Rust | `cargo new --lib` |
 | Desktop app (cross-platform) | Tauri + React | `create-tauri-app --template react-ts` |
+| Full-stack React app (SSR) | TanStack Start + shadcn | `npx create-tanstack-start-shadcn` |
 | Modern web SPA | TanStack Router | `create-tanstack-app` |
 | REST API (Python) | Python + FastAPI | Manual + FastAPI |
 | REST API (.NET) | .NET Minimal API | `dotnet new web` |
@@ -46,6 +47,29 @@ npm create tauri-app@latest my-app -- --template solid-ts
 npm create tauri-app@latest my-app -- --template leptos
 npm create tauri-app@latest my-app -- --template yew
 ```
+
+## TanStack Start + shadcn/ui Templates
+
+```bash
+# Full-stack React with SSR, React Query, shadcn/ui, Tailwind v4
+npx create-tanstack-start-shadcn my-app
+
+# With specific package manager
+npx create-tanstack-start-shadcn my-app --use-pnpm
+npx create-tanstack-start-shadcn my-app --use-yarn
+npx create-tanstack-start-shadcn my-app --use-bun
+```
+
+**Includes:**
+- TanStack Start (full-stack framework)
+- TanStack Router (file-based routing)
+- TanStack React Query (data fetching with SSR integration)
+- shadcn/ui components (new-york style)
+- Tailwind CSS v4
+- TypeScript
+- Sidebar layout with navigation
+- Server functions and API routes examples
+- Deferred data loading demo
 
 ## TanStack Router Templates
 
@@ -132,6 +156,13 @@ Create `.editorconfig` for consistent formatting across editors.
 Each skill includes GitHub Actions workflow templates.
 
 ## Quick Start Commands
+
+### Full-Stack React App (TanStack Start + shadcn)
+```bash
+npx create-tanstack-start-shadcn my-app
+cd my-app
+npm run dev
+```
 
 ### Full-Stack Desktop App (Tauri + React)
 ```bash
