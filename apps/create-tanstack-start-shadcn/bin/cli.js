@@ -76,7 +76,7 @@ function copy(src, dest) {
 
 async function main() {
   console.log()
-  console.log(pc.cyan(pc.bold('  Create TanStack Start App')))
+  console.log(pc.cyan(pc.bold('  Create TanStack Start + shadcn/ui App')))
   console.log()
 
   // Get project name from args or prompt

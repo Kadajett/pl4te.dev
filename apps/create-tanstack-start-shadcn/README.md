@@ -1,4 +1,4 @@
-# create-start-basic
+# create-tanstack-start-shadcn
 
 A CLI to scaffold a TanStack Start application with React Query, shadcn/ui, and Tailwind CSS v4.
 
@@ -6,16 +6,16 @@ A CLI to scaffold a TanStack Start application with React Query, shadcn/ui, and 
 
 ```bash
 # npm
-npx create-start-basic my-app
+npx create-tanstack-start-shadcn my-app
 
 # yarn
-yarn create start-basic my-app
+yarn create tanstack-start-shadcn my-app
 
 # pnpm
-pnpm create start-basic my-app
+pnpm create tanstack-start-shadcn my-app
 
 # bun
-bun create start-basic my-app
+bun create tanstack-start-shadcn my-app
 ```
 
 ### With Package Manager Flag
@@ -23,9 +23,9 @@ bun create start-basic my-app
 Skip the package manager prompt by passing a flag:
 
 ```bash
-npx create-start-basic my-app --use-pnpm
-npx create-start-basic my-app --use-yarn
-npx create-start-basic my-app --use-bun
+npx create-tanstack-start-shadcn my-app --use-pnpm
+npx create-tanstack-start-shadcn my-app --use-yarn
+npx create-tanstack-start-shadcn my-app --use-bun
 ```
 
 ## What's Included
