@@ -176,6 +176,7 @@ async function main() {
     ['gitignore', '.gitignore'],
     ['prettierignore', '.prettierignore'],
     ['vscode', '.vscode'],
+    ['claude', '.claude'],
   ]
 
   for (const [from, to] of renames) {

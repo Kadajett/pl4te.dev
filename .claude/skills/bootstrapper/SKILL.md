@@ -1,6 +1,6 @@
 ---
 name: bootstrapper
-description: Bootstrap new projects with modern tech stacks. Use when creating new applications, setting up projects, initializing codebases, or when the user mentions project setup, scaffolding, or bootstrapping. Supports Rust, Tauri, TanStack Router, Python, and C# .NET projects.
+description: Bootstrap new projects with modern tech stacks. Use when creating new applications, setting up projects, initializing codebases, or when the user mentions project setup, scaffolding, or bootstrapping. Supports TanStack Start + shadcn (via npx create-tanstack-start-shadcn), Rust, Tauri, TanStack Router, Python, and C# .NET projects.
 ---
 
 # Project Bootstrapper
@@ -9,35 +9,61 @@ A comprehensive project scaffolding system that helps you create new application
 
 ## Supported Tech Stacks
 
-| Stack | Description | Use Case |
-|-------|-------------|----------|
-| **TanStack Start + shadcn** | Full-stack React with SSR | Production web apps with React Query, shadcn/ui, Tailwind |
-| **Rust** | Systems programming with Cargo | CLI tools, libraries, high-performance applications |
-| **Tauri** | Rust + Web frontend desktop apps | Cross-platform desktop applications |
-| **TanStack Router** | Type-safe React routing | Modern React SPAs with file-based routing |
-| **Python venv** | Python with virtual environment | Scripts, APIs, data science, automation |
-| **C# .NET** | .NET Core/8+ applications | APIs, desktop apps, enterprise software |
+| Stack | Command | Use Case |
+|-------|---------|----------|
+| **TanStack Start + shadcn** | `npx create-tanstack-start-shadcn my-app` | Full-stack React with SSR, React Query, shadcn/ui, Tailwind v4 |
+| **Rust** | `cargo new my-app` | CLI tools, libraries, high-performance applications |
+| **Tauri** | `npm create tauri-app@latest` | Cross-platform desktop applications |
+| **TanStack Router** | `npx create-tanstack-app@latest` | Modern React SPAs with file-based routing |
+| **Python venv** | `uv init my-app` or `python3 -m venv` | Scripts, APIs, data science, automation |
+| **C# .NET** | `dotnet new web -n my-app` | APIs, desktop apps, enterprise software |
+
+## Installation Commands
+
+### TanStack Start + shadcn/ui (Recommended for full-stack React)
+
+```bash
+# Create a new project
+npx create-tanstack-start-shadcn my-app
+
+# With specific package manager
+npx create-tanstack-start-shadcn my-app --use-pnpm
+npx create-tanstack-start-shadcn my-app --use-yarn
+npx create-tanstack-start-shadcn my-app --use-bun
+
+# Start development
+cd my-app
+npm run dev
+```
+
+**Includes:** TanStack Start, TanStack Router, React Query, shadcn/ui (new-york style), Tailwind CSS v4, TypeScript, sidebar layout, server functions, API routes, deferred data loading.
+
+**After installation:** The project includes a `.claude/skills/tanstack-start-shadcn/` directory with comprehensive development documentation.
+
+### Other Stacks
+
+See [TEMPLATES.md](TEMPLATES.md) for detailed commands for all supported stacks.
 
 ## How to Use
 
 When asked to bootstrap a project, I will:
 
 1. **Clarify requirements**: Ask about project name, target directory, and specific needs
-2. **Check prerequisites**: Verify required tools are installed
-3. **Select appropriate skill**: Use the specialized skill for the chosen stack
-4. **Execute setup**: Run the official installers/scaffolding tools when available
-5. **Apply best practices**: Configure linting, formatting, testing, and CI/CD
+2. **Check prerequisites**: Verify required tools are installed (Node.js 18+, git, etc.)
+3. **Run the scaffolding command**: Execute the appropriate npx/cargo/dotnet command
+4. **Verify setup**: Ensure dependencies installed and dev server starts
+5. **Point to development docs**: Reference the skill documentation included in the project
 
 ## Quick Commands
 
 To bootstrap a project, ask me to:
-- "Create a full-stack React app with TanStack Start"
-- "Set up a new project with shadcn/ui and Tailwind"
-- "Create a new Rust CLI project"
-- "Set up a Tauri desktop app with React"
-- "Bootstrap a TanStack Router project"
-- "Initialize a Python project with virtual environment"
-- "Create a new .NET 8 Web API"
+- "Create a full-stack React app with TanStack Start" → `npx create-tanstack-start-shadcn`
+- "Set up a new project with shadcn/ui and Tailwind" → `npx create-tanstack-start-shadcn`
+- "Create a new Rust CLI project" → `cargo new`
+- "Set up a Tauri desktop app with React" → `npm create tauri-app@latest`
+- "Bootstrap a TanStack Router project" → `npx create-tanstack-app@latest`
+- "Initialize a Python project with virtual environment" → `uv init` or `python3 -m venv`
+- "Create a new .NET 8 Web API" → `dotnet new web`
 
 ## Prerequisites Check
 
@@ -45,10 +71,11 @@ Before bootstrapping, I'll verify these tools are available:
 
 ```bash
 # Check common tools
+node --version  # Should be 18+
 which git && git --version
 ```
 
-For stack-specific requirements, see the individual skill files.
+For stack-specific requirements, see [TEMPLATES.md](TEMPLATES.md).
 
 ## Project Naming Conventions
 
