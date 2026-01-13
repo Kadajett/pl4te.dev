@@ -1,131 +1,143 @@
 # pl4te.dev
 
-A collection of production-ready boilerplate templates and Claude Code Skills optimized for AI-assisted development.
+Production-ready boilerplate templates with optional Claude Code Skills for AI-assisted development.
+
+## Quick Start
+
+Just want to scaffold a project? Use npx:
+
+```bash
+# TanStack Start + React Query + shadcn/ui + Tailwind v4
+npx create-tanstack-start-shadcn my-app
+```
+
+That's it. No AI required.
 
 ## Available Templates
 
-| Template | Description | Install |
-|----------|-------------|---------|
-| [create-tanstack-start-shadcn](./apps/create-tanstack-start-shadcn) | TanStack Start + React Query + shadcn/ui + Tailwind v4 | `npx create-tanstack-start-shadcn my-app` |
+| Template | Stack | Install |
+|----------|-------|---------|
+| [create-tanstack-start-shadcn](./apps/create-tanstack-start-shadcn) | TanStack Start, React Query, shadcn/ui, Tailwind v4 | `npx create-tanstack-start-shadcn my-app` |
 
-## Claude Code Skills
+---
 
-This project includes **Bootstrapper Skills** - a set of Claude Code Skills that help you scaffold new projects with modern tech stacks. Think of it as a modern yeoman/npx alternative powered by AI.
+## For AI-Assisted Development
+
+This project includes **Claude Code Skills** that enhance AI-assisted development. Skills teach Claude how to scaffold projects and work with specific tech stacks.
+
+### Option 1: Let Claude Download Skills Automatically
+
+Copy and paste this command to Claude Code:
+
+```
+Download the bootstrapper skill from https://raw.githubusercontent.com/Kadajett/pl4te.dev/main/.claude/skills/bootstrapper/SKILL.md and save it to ~/.claude/skills/bootstrapper/SKILL.md
+```
+
+Or for project-local skills:
+
+```
+Download the bootstrapper skill from https://raw.githubusercontent.com/Kadajett/pl4te.dev/main/.claude/skills/bootstrapper/SKILL.md and save it to .claude/skills/bootstrapper/SKILL.md
+```
+
+### Option 2: Manual Download
+
+```bash
+# Create skills directory
+mkdir -p ~/.claude/skills/bootstrapper
+
+# Download the bootstrapper skill
+curl -o ~/.claude/skills/bootstrapper/SKILL.md \
+  https://raw.githubusercontent.com/Kadajett/pl4te.dev/main/.claude/skills/bootstrapper/SKILL.md
+
+# Optional: Download templates reference
+curl -o ~/.claude/skills/bootstrapper/TEMPLATES.md \
+  https://raw.githubusercontent.com/Kadajett/pl4te.dev/main/.claude/skills/bootstrapper/TEMPLATES.md
+```
+
+### Option 3: Clone the Repo
+
+```bash
+git clone https://github.com/Kadajett/pl4te.dev.git
+cd pl4te.dev
+
+# Skills are in .claude/skills/ - Claude Code will detect them automatically
+```
+
+### Using Skills with Claude Code
+
+Once the bootstrapper skill is installed, just ask Claude naturally:
+
+```
+Create a new TanStack Start app with shadcn
+```
+
+```
+Set up a Rust CLI project
+```
+
+```
+Bootstrap a Python FastAPI project
+```
+
+Claude will use the skill to run the appropriate scaffolding commands.
 
 ### Supported Tech Stacks
 
-| Stack | Description | Example Prompt |
-|-------|-------------|----------------|
-| **Rust** | Cargo projects with clippy, rustfmt, CI | "Create a new Rust CLI project" |
-| **Tauri** | Desktop apps with Rust + web frontend | "Set up a Tauri app with React" |
-| **TanStack Router** | Type-safe React routing | "Bootstrap a TanStack Router project" |
-| **Python** | Virtual env with uv/poetry, ruff, mypy | "Initialize a Python FastAPI project" |
-| **C# .NET** | .NET 8+ Web APIs, console apps | "Create a .NET minimal API" |
+| Stack | Command | Description |
+|-------|---------|-------------|
+| TanStack Start + shadcn | `npx create-tanstack-start-shadcn` | Full-stack React with SSR |
+| Rust | `cargo new` | CLI tools, libraries |
+| Tauri | `npm create tauri-app@latest` | Desktop apps |
+| TanStack Router | `npx create-tanstack-app@latest` | React SPAs |
+| Python | `uv init` / `python3 -m venv` | Scripts, APIs |
+| C# .NET | `dotnet new` | APIs, desktop apps |
 
-### Installing the Skills
+### What the Bootstrapper Skill Provides
 
-#### Option 1: Use with this project
+- Prerequisites checks (Node.js, git, etc.)
+- Official CLI commands for each stack
+- Post-setup recommendations
+- Links to comprehensive dev documentation
 
-The skills are already included in `.claude/skills/`. Just open Claude Code in this directory and they'll be available automatically.
+### Project Skills vs Bootstrapper Skills
 
-#### Option 2: Copy to personal skills (use across all projects)
+- **Bootstrapper skill** (in this repo): Helps Claude create new projects
+- **Project skills** (in scaffolded projects): Helps Claude work within the project
 
-```bash
-cp -r .claude/skills/* ~/.claude/skills/
-```
+When you scaffold with `npx create-tanstack-start-shadcn`, the new project includes its own `.claude/skills/` with development documentation specific to that stack.
 
-#### Option 3: Copy to another project
-
-```bash
-cp -r .claude/skills /path/to/your/project/.claude/
-```
-
-### Using the Skills
-
-Once installed, just ask Claude Code naturally:
-
-```
-Create a new Rust CLI project called my-tool
-```
-
-```
-Set up a Tauri desktop app with React and TypeScript
-```
-
-```
-Bootstrap a TanStack Router project for my web app
-```
-
-```
-Initialize a Python project with FastAPI for a REST API
-```
-
-```
-Create a .NET 8 minimal API project
-```
-
-Claude will automatically detect your intent and use the appropriate skill.
-
-### What Each Skill Provides
-
-- **Prerequisites check** - Verifies required tools are installed
-- **Official tooling** - Uses official CLIs when available (cargo, create-tauri-app, etc.)
-- **Modern configuration** - Latest best practices and tool versions
-- **Project structure** - Recommended directory layouts
-- **Essential dependencies** - Common packages for each stack
-- **CI/CD templates** - Ready-to-use GitHub Actions workflows
-- **Code quality** - Linting, formatting, and type checking setup
-- **Post-setup checklist** - Steps to complete after bootstrapping
-
-### Skills Structure
-
-```
-.claude/skills/
-├── bootstrapper/           # Main orchestrator
-│   ├── SKILL.md
-│   ├── PREREQUISITES.md    # Tool installation reference
-│   └── TEMPLATES.md        # Template quick reference
-├── rust-project/
-├── tauri-app/
-├── tanstack-router/
-├── python-venv/
-└── csharp-dotnet/
-```
+---
 
 ## Philosophy
 
-These boilerplates and skills are designed with AI-assisted development in mind:
+These templates are designed for both human and AI-assisted development:
 
-- **Clear project structure** - Predictable file organization that AI can navigate
-- **Type-safe by default** - TypeScript throughout for better AI code generation
-- **Modern best practices** - Latest patterns and conventions baked in
+- **Clear project structure** - Predictable file organization
+- **Type-safe by default** - TypeScript throughout
+- **Modern best practices** - Latest patterns baked in
 - **Minimal but complete** - Everything you need, nothing you don't
-- **Well-documented** - READMEs and inline comments for context
-
-## For AI Assistants
-
-Each boilerplate includes:
-- Detailed README with project structure
-- Example patterns for common tasks
-- Type definitions that provide context
-- Consistent naming conventions
+- **Well-documented** - Skills provide context for AI assistants
 
 ## Contributing
 
 ### Adding a Template
 
-Each template should:
-1. Be a standalone npm package in `apps/`
+1. Create a new package in `apps/`
 2. Include a CLI for scaffolding (`npx create-*`)
-3. Have a comprehensive README
-4. Follow the naming convention: `create-[stack]-[variant]`
+3. Add a `.claude/skills/` directory with development documentation
+4. Update this README
 
 ### Adding a Skill
 
-1. Create a new directory in `.claude/skills/my-stack/`
-2. Create `SKILL.md` with YAML frontmatter (name, description) and instructions
-3. Include prerequisites, project creation commands, configuration examples
-4. Add CI/CD templates and post-setup checklist
+1. Create a directory in `.claude/skills/my-skill/`
+2. Create `SKILL.md` with YAML frontmatter:
+   ```yaml
+   ---
+   name: my-skill
+   description: What this skill does and when to use it
+   ---
+   ```
+3. Add instructions, examples, and commands
 
 ## License
 

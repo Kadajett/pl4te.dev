@@ -1,6 +1,6 @@
 {
   "name": "create-tanstack-start-shadcn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a TanStack Start app with React Query, shadcn/ui, and Tailwind CSS v4",
   "type": "module",
   "bin": {

@@ -179,6 +179,43 @@ Access in code with `import.meta.env.VITE_API_URL`.
 - [shadcn/ui Docs](https://ui.shadcn.com/docs)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
+---
+
+## For AI-Assisted Development
+
+This template includes a **Claude Code Skill** at `.claude/skills/tanstack-start-shadcn/` with comprehensive development documentation.
+
+### What's Included
+
+The skill teaches Claude how to:
+- Add new routes (basic, dynamic, layout, pathless)
+- Use React Query with the router context pattern
+- Create server functions with `createServerFn`
+- Build API routes with handlers
+- Implement deferred data loading
+- Add and use shadcn/ui components
+- Handle errors and 404s
+- Work with search parameters
+- And more...
+
+### Using with Claude Code
+
+Just open your project in Claude Code and ask naturally:
+
+```
+Add a new route for user settings
+```
+
+```
+Create a server function to fetch products from the database
+```
+
+```
+Add a Card component from shadcn and use it on the home page
+```
+
+Claude will reference the skill documentation to provide accurate, project-specific guidance.
+
 ## License
 
 MIT
